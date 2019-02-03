@@ -35,6 +35,10 @@
   },
   "dependencies": {
     "@types/cheerio": "^0.22.8",
-    "cheerio": "^1.0.0-rc.2"
+    "@types/fibers": "0.0.30",
+    "@types/request": "^2.47.1",
+    "cheerio": "^1.0.0-rc.2",
+    "fibers": "^3.0.0",
+    "request": "^2.88.0"
   }
 }

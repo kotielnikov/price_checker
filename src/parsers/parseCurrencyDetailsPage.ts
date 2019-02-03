@@ -1,6 +1,7 @@
+import { CurrencyPair, Volume24h, Price, VolumePercent, ParsedMarket, MarketName } from '../types';
 import * as cheerio from 'cheerio';
 
-const parseMarket = (element: CheerioElement) => {
+const parseMarket = (element: CheerioElement): MarketName => {
   const market = cheerio(element).attr('data-sort');
 
   if (!market) {
@@ -10,7 +11,7 @@ const parseMarket = (element: CheerioElement) => {
   return market;
 };
 
-const parsePair = (element: CheerioElement) => {
+const parsePair = (element: CheerioElement): CurrencyPair => {
   const value = cheerio(element).attr('data-sort');
   const pair = value.split('/');
 
@@ -21,7 +22,7 @@ const parsePair = (element: CheerioElement) => {
   return pair;
 };
 
-const parseVolume24h = (element: CheerioElement) => {
+const parseVolume24h = (element: CheerioElement): Volume24h => {
   const value = cheerio(element).attr('data-sort');
   const volume24h = +value;
 
@@ -32,7 +33,7 @@ const parseVolume24h = (element: CheerioElement) => {
   return volume24h;
 };
 
-const parsePrice = (element: CheerioElement) => {
+const parsePrice = (element: CheerioElement): Price => {
   const value = cheerio(element).attr('data-sort');
   const price = +value;
 
@@ -43,7 +44,7 @@ const parsePrice = (element: CheerioElement) => {
   return price;
 };
 
-const parseVolumePercent = (element: CheerioElement) => {
+const parseVolumePercent = (element: CheerioElement): VolumePercent => {
   const value = cheerio(element).attr('data-sort');
   const volumePercent = +value;
 
@@ -84,7 +85,7 @@ const parseUpdated = (element: CheerioElement) => {
   return updated;
 };
 
-export default function parseCurrencyDetailsPage(page: string) {
+export default function parseCurrencyDetailsPage(page: string): Array<ParsedMarket> {
   if (!page || typeof page !== 'string') {
     throw new Error('Invalid input data');
   }

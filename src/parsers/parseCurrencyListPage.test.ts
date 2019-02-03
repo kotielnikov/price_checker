@@ -26,22 +26,26 @@ describe('parseCurrencyListPage', () => {
   it('does correct parsing', () =>
     expect(parseCurrencyListPage(currencyListPageMock)).toEqual([
       {
-        change24h: 0.104873,
+        change1h: -0.138363,
+        change24h: -0.220157,
+        change7d: -3.15549,
         currencyName: 'BTC',
         link: '/currencies/bitcoin/',
-        marketCap: 111262521274,
-        price: 6459.40012853,
-        supply: 17224900,
-        volume24h: 4191953459.72,
+        marketCap: 60878313229.9,
+        price: 3475.3624473,
+        supply: 17517112,
+        volume24h: 4897311346.83,
       },
       {
-        change24h: -0.805003,
-        currencyName: 'ETH',
-        link: '/currencies/ethereum/',
-        marketCap: 27960169593.3,
-        price: 275.500740256,
-        supply: 101488546.155,
-        volume24h: 1348748037.61,
+        change1h: -0.505579,
+        change24h: -0.890039,
+        change7d: -2.09716,
+        currencyName: 'XRP',
+        link: '/currencies/ripple/',
+        marketCap: 12519489563.7,
+        price: 0.304140798724,
+        supply: 41163466448,
+        volume24h: 429886423.324,
       },
     ]));
 });

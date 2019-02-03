@@ -1,6 +1,7 @@
 import * as cheerio from 'cheerio';
+import { ParsedCurrency, CurrencyName, Link, MarketCap, Price, Volume24h, Supply, Change24h } from '../types';
 
-const parseName = (element: CheerioElement) => {
+const parseName = (element: CheerioElement): CurrencyName => {
   const name = cheerio(element)
     .find('.currency-symbol a')
     .text();
@@ -12,7 +13,7 @@ const parseName = (element: CheerioElement) => {
   return name;
 };
 
-const parseLink = (element: CheerioElement) => {
+const parseLink = (element: CheerioElement): Link => {
   const link = cheerio(element)
     .find('.currency-symbol a')
     .attr('href');
@@ -24,7 +25,7 @@ const parseLink = (element: CheerioElement) => {
   return link;
 };
 
-const parseMarketCap = (element: CheerioElement) => {
+const parseMarketCap = (element: CheerioElement): MarketCap => {
   const value = cheerio(element).attr('data-sort');
   const marketCap = +value;
 
@@ -35,7 +36,7 @@ const parseMarketCap = (element: CheerioElement) => {
   return marketCap;
 };
 
-const parsePrice = (element: CheerioElement) => {
+const parsePrice = (element: CheerioElement): Price => {
   const value = cheerio(element).attr('data-sort');
   const price = +value;
 
@@ -46,7 +47,7 @@ const parsePrice = (element: CheerioElement) => {
   return price;
 };
 
-const parseVolume24h = (element: CheerioElement) => {
+const parseVolume24h = (element: CheerioElement): Volume24h => {
   const value = cheerio(element).attr('data-sort');
   const volume24h = +value;
 
@@ -57,7 +58,7 @@ const parseVolume24h = (element: CheerioElement) => {
   return volume24h;
 };
 
-const parseSupply = (element: CheerioElement) => {
+const parseSupply = (element: CheerioElement): Supply => {
   const value = cheerio(element).attr('data-sort');
   const supply = +value;
 
@@ -68,7 +69,7 @@ const parseSupply = (element: CheerioElement) => {
   return supply;
 };
 
-const parseChange24 = (element: CheerioElement) => {
+const parseChange = (element: CheerioElement): Change24h => {
   const value = cheerio(element).attr('data-sort');
   const change24 = +value;
 
@@ -79,15 +80,14 @@ const parseChange24 = (element: CheerioElement) => {
   return change24;
 };
 
-export default function parseCurrencyDetailsPage(page: string) {
+export default function parseCurrencyDetailsPage(page: string): Array<ParsedCurrency> {
   if (!page || typeof page !== 'string') {
     throw new Error('Empty input!');
   }
 
   const trs = cheerio(page)
-    .find('#currencies tr')
-    .toArray()
-    .splice(1);
+    .find('#currencies-all tbody tr')
+    .toArray();
 
   if (!trs.length) {
     throw new Error('No table found');
@@ -99,11 +99,13 @@ export default function parseCurrencyDetailsPage(page: string) {
     try {
       const name = parseName(tds[1]);
       const link = parseLink(tds[1]);
-      const marketCap = parseMarketCap(tds[2]);
-      const price = parsePrice(tds[3]);
-      const volume24h = parseVolume24h(tds[4]);
+      const marketCap = parseMarketCap(tds[3]);
+      const price = parsePrice(tds[4]);
+      const volume24h = parseVolume24h(tds[6]);
       const supply = parseSupply(tds[5]);
-      const change24h = parseChange24(tds[6]);
+      const change1h = parseChange(tds[7]);
+      const change24h = parseChange(tds[8]);
+      const change7d = parseChange(tds[9]);
 
       return {
         currencyName: name,
@@ -111,7 +113,9 @@ export default function parseCurrencyDetailsPage(page: string) {
         price: +price,
         volume24h: +volume24h,
         supply: +supply,
+        change1h: +change1h,
         change24h: +change24h,
+        change7d: +change7d,
         link,
       };
     } catch (error) {

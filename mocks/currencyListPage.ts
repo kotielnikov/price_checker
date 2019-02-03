@@ -1,125 +1,106 @@
 export default `
-<!doctype html>
-<!--[if lt IE 7]>      
-<html class="no-js lt-ie9 lt-ie8 lt-ie7">
-   <![endif]-->
-   <!--[if IE 7]>         
-   <html class="no-js lt-ie9 lt-ie8">
-      <![endif]-->
-      <!--[if IE 8]>         
-      <html class="no-js lt-ie9">
-         <![endif]-->
-         <!--[if gt IE 8]><!-->
-         <html lang="en">
-            <!--<![endif]-->
-            <body>
-               <table class="table floating-header " id="currencies">
-                  <thead>
-                     <tr>
-                        <th class="col-rank text-center sortable">#</th>
-                        <th id="th-name" class="sortable">Name</th>
-                        <th id="th-marketcap" class="sortable text-right" data-mobile-text="M. Cap">Market Cap</th>
-                        <th id="th-price" class="sortable text-right">Price</th>
-                        <th id="th-volume" class="sortable text-right" data-mobile-text="Volume">Volume (24h)</th>
-                        <th id="th-totalsupply" class="sortable text-right" title="The number of coins in existence available to the public" data-mobile-text="Supply">Circulating Supply</th>
-                        <th id="th-change" class="sortable text-right" data-mobile-text="Change">Change (24h)</th>
-                        <th id="th-marketcap-graph" class="text-right">Price Graph (7d)</th>
-                        <th id="th-more-options"></th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr id="id-bitcoin" class="">
-                        <td class="text-center">
-                           1
-                        </td>
-                        <td class="no-wrap currency-name" data-sort="Bitcoin">
-                           <img src="https://s2.coinmarketcap.com/static/img/coins/16x16/1.png" class="logo-sprite" alt="Bitcoin" height="16" width="16">
-                           <span class="currency-symbol visible-xs"><a class="link-secondary" href="/currencies/bitcoin/">BTC</a></span>
-                           <br class="visible-xs">
-                           <a class="currency-name-container link-secondary" href="/currencies/bitcoin/">Bitcoin</a>
-                        </td>
-                        <td class="no-wrap market-cap text-right" data-usd="1.11262521274e+11" data-btc="17224900.0" data-sort="1.11262521274e+11">
-                           $111,262,521,274
-                        </td>
-                        <td class="no-wrap text-right" data-sort="6459.40012853">
-                           <a href="/currencies/bitcoin/#markets" class="price" data-usd="6459.40012853" data-btc="1.0">$6459.40</a>
-                        </td>
-                        <td class="no-wrap text-right" data-sort="4191953459.72">
-                           <a href="/currencies/bitcoin/#markets" class="volume" data-usd="4191953459.72" data-btc="650201.223177">$4,191,953,460</a>
-                        </td>
-                        <td class="no-wrap text-right circulating-supply" data-sort="17224900.0">
-                           <span data-supply="17224900.0">
-                           <span data-supply-container>17,224,900</span>
-                           <span class="hidden-xs">BTC</span>
-                           </a>
-                        </td>
-                        <td class="no-wrap percent-change  positive_change  text-right" data-timespan="24h" data-percentusd="0.104873" data-symbol="BTC" data-sort="0.104873">0.10%</td>
-                        <td><a href="/currencies/bitcoin/#charts">
-                           <img class="sparkline" alt="sparkline" src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1.png">
-                           </a>
-                        </td>
-                        <td class="dropdown" data-more-options data-cc-id="1" data-cc-slug="bitcoin">
-                           <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdown-menu-1" data-toggle="dropdown">
-                           <span class="glyphicons glyphicons-more text-gray"></span>
-                           </button>
-                           <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdown-menu-1">
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-add>Add to Watchlist</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-remove>Remove from Watchlist</a></li>
-                              <li class="disabled" role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-full>Watchlist full!</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/bitcoin/#charts">View Chart</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/bitcoin/#markets">View Markets</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/bitcoin/historical-data/">View Historical Data</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="https://payments.changelly.com/?crypto=BTC&amp;fiat=USD&amp;ref_id=coinmarketcap" target="_blank" rel="nofollow noopener">Buy / Sell Instantly</a></li>
-                           </ul>
-                        </td>
-                     </tr>
-                     <tr id="id-ethereum" class="">
-                        <td class="text-center">
-                           2
-                        </td>
-                        <td class="no-wrap currency-name" data-sort="Ethereum">
-                           <img src="https://s2.coinmarketcap.com/static/img/coins/16x16/1027.png" class="logo-sprite" alt="Ethereum" height="16" width="16">
-                           <span class="currency-symbol visible-xs"><a class="link-secondary" href="/currencies/ethereum/">ETH</a></span>
-                           <br class="visible-xs">
-                           <a class="currency-name-container link-secondary" href="/currencies/ethereum/">Ethereum</a>
-                        </td>
-                        <td class="no-wrap market-cap text-right" data-usd="27960169593.3" data-btc="4336817.34411" data-sort="27960169593.3">
-                           $27,960,169,593
-                        </td>
-                        <td class="no-wrap text-right" data-sort="275.500740256">
-                           <a href="/currencies/ethereum/#markets" class="price" data-usd="275.500740256" data-btc="0.0427320866088">$275.50</a>
-                        </td>
-                        <td class="no-wrap text-right" data-sort="1348748037.61">
-                           <a href="/currencies/ethereum/#markets" class="volume" data-usd="1348748037.61" data-btc="209200.22902">$1,348,748,038</a>
-                        </td>
-                        <td class="no-wrap text-right circulating-supply" data-sort="101488546.155">
-                           <span data-supply="101488546.155">
-                           <span data-supply-container>101,488,546</span>
-                           <span class="hidden-xs">ETH</span>
-                           </a>
-                        </td>
-                        <td class="no-wrap percent-change  negative_change text-right" data-timespan="24h" data-percentusd="-0.805003" data-symbol="ETH" data-sort="-0.805003">-0.81%</td>
-                        <td><a href="/currencies/ethereum/#charts">
-                           <img class="sparkline" alt="sparkline" src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1027.png">
-                           </a>
-                        </td>
-                        <td class="dropdown" data-more-options data-cc-id="1027" data-cc-slug="ethereum">
-                           <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdown-menu-1027" data-toggle="dropdown">
-                           <span class="glyphicons glyphicons-more text-gray"></span>
-                           </button>
-                           <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdown-menu-1027">
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-add>Add to Watchlist</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-remove>Remove from Watchlist</a></li>
-                              <li class="disabled" role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-full>Watchlist full!</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/ethereum/#charts">View Chart</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/ethereum/#markets">View Markets</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/ethereum/historical-data/">View Historical Data</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="https://payments.changelly.com/?crypto=ETH&amp;fiat=USD&amp;ref_id=coinmarketcap" target="_blank" rel="nofollow noopener">Buy / Sell Instantly</a></li>
-                           </ul>
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
-            </body>
-         </html>
+<html>
+   <body>
+      <table class="table floating-header summary-table js-summary-table" id="currencies-all" style="font-size:14px">
+         <thead>
+            <tr>
+               <th class="text-center sortable">#</th>
+               <th id="th-name" class="sortable">Name</th>
+               <th id="th-symbol" class="sortable col-symbol">Symbol</th>
+               <th id="th-marketcap" class="sortable text-right" data-mobile-text="M. Cap">Market Cap</th>
+               <th id="th-price" class="sortable text-right">Price</th>
+               <th id="th-totalsupply" class="sortable text-right" title="The number of coins in existence available to the public" data-mobile-text="Supply">Circulating Supply</th>
+               <th id="th-volume" class="sortable text-right" data-mobile-text="Volume">Volume (24h)</th>
+               <th id="th-change1h" class="sortable text-right">% 1h</th>
+               <th id="th-change24h" class="sortable text-right">% 24h</th>
+               <th id="th-change7d" class="sortable text-right">% 7d</th>
+               <th id="th-more-options" class="hide"></th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr id="id-bitcoin" class="">
+               <td class="text-center">
+                  1
+               </td>
+               <td class="no-wrap currency-name" data-sort="Bitcoin">
+                  <div class="s-s-1 logo-sprite"></div>
+                  <span class="currency-symbol visible-xs"><a class="link-secondary" href="/currencies/bitcoin/">BTC</a></span>
+                  <br class="visible-xs">
+                  <a class="currency-name-container link-secondary" href="/currencies/bitcoin/">Bitcoin</a>
+               </td>
+               <td class="text-left col-symbol">BTC</td>
+               <td class="no-wrap market-cap text-right" data-usd="60878313229.9" data-btc="17517112.0" data-sort="60878313229.9">
+                  $60,878,313,230
+               </td>
+               <td class="no-wrap text-right" data-sort="3475.3624473">
+                  <a href="/currencies/bitcoin/#markets" class="price" data-usd="3475.3624473" data-btc="1.0">$3475.36</a>
+               </td>
+               <td class="no-wrap text-right circulating-supply" data-sort="17517112.0">
+                  <span data-supply="17517112.0" data-supply-container>17,517,112</span>
+               </td>
+               <td class="no-wrap text-right " data-sort="4897311346.83">
+                  <a href="/currencies/bitcoin/#markets" class="volume" data-usd="4897311346.83" data-btc="1411496.88023">$4,897,311,347</a>
+               </td>
+               <td class="no-wrap percent-change  negative_change text-right" data-timespan="1h" data-percentusd="-0.14" data-symbol="BTC" data-sort="-0.138363">-0.14%</td>
+               <td class="no-wrap percent-change  negative_change text-right" data-timespan="24h" data-percentusd="-0.22" data-symbol="BTC" data-sort="-0.220157">-0.22%</td>
+               <td class="no-wrap percent-change  negative_change text-right" data-timespan="7d" data-percentusd="-3.16" data-symbol="BTC" data-sort="-3.15549">-3.16%</td>
+               <td class="more-options-cell dropdown hide" data-more-options data-cc-id="1" data-cc-slug="bitcoin">
+                  <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdown-menu-1" data-toggle="dropdown">
+                  <span class="glyphicons glyphicons-more text-gray"></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdown-menu-1">
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-add>Add to Watchlist</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-remove>Remove from Watchlist</a></li>
+                     <li class="disabled" role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-full>Watchlist full!</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/bitcoin/#charts">View Chart</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/bitcoin/#markets">View Markets</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/bitcoin/historical-data/">View Historical Data</a></li>
+                  </ul>
+               </td>
+            </tr>
+            <tr id="id-ripple" class="">
+               <td class="text-center">
+                  2
+               </td>
+               <td class="no-wrap currency-name" data-sort="XRP">
+                  <div class="s-s-52 logo-sprite"></div>
+                  <span class="currency-symbol visible-xs"><a class="link-secondary" href="/currencies/ripple/">XRP</a></span>
+                  <br class="visible-xs">
+                  <a class="currency-name-container link-secondary" href="/currencies/ripple/">XRP</a>
+               </td>
+               <td class="text-left col-symbol">XRP</td>
+               <td class="no-wrap market-cap text-right" data-usd="12519489563.7" data-btc="3611592.36953" data-sort="12519489563.7">
+                  $12,519,489,564
+               </td>
+               <td class="no-wrap text-right" data-sort="0.304140798724">
+                  <a href="/currencies/ripple/#markets" class="price" data-usd="0.304140798724" data-btc="8.77378093046e-05">$0.304141</a>
+               </td>
+               <td class="no-wrap text-right circulating-supply" data-sort="41163466448.0">
+                  <span data-supply="41163466448.0" data-supply-container>41,163,466,448</span>
+                  *
+               </td>
+               <td class="no-wrap text-right " data-sort="429886423.324">
+                  <a href="/currencies/ripple/#markets" class="volume" data-usd="429886423.324" data-btc="124012.605972">$429,886,423</a>
+               </td>
+               <td class="no-wrap percent-change  negative_change text-right" data-timespan="1h" data-percentusd="-0.51" data-symbol="XRP" data-sort="-0.505579">-0.51%</td>
+               <td class="no-wrap percent-change  negative_change text-right" data-timespan="24h" data-percentusd="-0.89" data-symbol="XRP" data-sort="-0.890039">-0.89%</td>
+               <td class="no-wrap percent-change  negative_change text-right" data-timespan="7d" data-percentusd="-2.10" data-symbol="XRP" data-sort="-2.09716">-2.10%</td>
+               <td class="more-options-cell dropdown hide" data-more-options data-cc-id="52" data-cc-slug="ripple">
+                  <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdown-menu-52" data-toggle="dropdown">
+                  <span class="glyphicons glyphicons-more text-gray"></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdown-menu-52">
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-add>Add to Watchlist</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-remove>Remove from Watchlist</a></li>
+                     <li class="disabled" role="presentation"><a role="menuitem" tabindex="-1" href="#" data-watchlist-full>Watchlist full!</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/ripple/#charts">View Chart</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/ripple/#markets">View Markets</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/currencies/ripple/historical-data/">View Historical Data</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>
 `;
