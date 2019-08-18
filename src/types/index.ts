@@ -7,6 +7,7 @@ export type Supply = number;
 export type ChangePercent = number;
 export type Link = string;
 export type MarketName = string;
+export type Change24h = ChangePercent;
 
 export interface ParsedCurrency {
   currencyName: CurrencyName;

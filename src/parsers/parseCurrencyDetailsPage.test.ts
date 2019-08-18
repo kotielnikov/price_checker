@@ -1,5 +1,5 @@
 import currencyDetailsPageMock from '../../mocks/currencyDetailsPage';
-import parseCurrencyDetailsPage from './parseCurrencyDetailsPage';
+import { parseCurrencyDetailsPage } from './parseCurrencyDetailsPage';
 
 describe('parseCurrencyDetailsPage', () => {
   it('throws error when invalid input', () => expect(() => parseCurrencyDetailsPage(undefined as string)).toThrow());

@@ -85,7 +85,7 @@ const parseUpdated = (element: CheerioElement) => {
   return updated;
 };
 
-export default function parseCurrencyDetailsPage(page: string): Array<ParsedMarket> {
+export function parseCurrencyDetailsPage(page: string): Array<ParsedMarket> {
   if (!page || typeof page !== 'string') {
     throw new Error('Invalid input data');
   }

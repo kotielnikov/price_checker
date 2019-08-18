@@ -1,5 +1,5 @@
 import currencyListPageMock from '../../mocks/currencyListPage';
-import parseCurrencyListPage from './parseCurrencyListPage';
+import { parseCurrencyListPage } from './parseCurrencyListPage';
 
 describe('parseCurrencyListPage', () => {
   it('throws error when invalid input', () => expect(() => parseCurrencyListPage(undefined as string)).toThrow());

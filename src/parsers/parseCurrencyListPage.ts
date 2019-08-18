@@ -80,7 +80,7 @@ const parseChange = (element: CheerioElement): Change24h => {
   return change24;
 };
 
-export default function parseCurrencyDetailsPage(page: string): Array<ParsedCurrency> {
+export function parseCurrencyListPage(page: string): Array<ParsedCurrency> {
   if (!page || typeof page !== 'string') {
     throw new Error('Empty input!');
   }
